@@ -4,7 +4,8 @@ def test():
 def another_func():
     print "OK"
 
-def vulnerable_input():
-        eval(raw_input())
-   
+def vulnerable_input(msg):
+        print eval(msg)
+
+vulnerable_input("__import__('os').listdir('.')")        
 test()
